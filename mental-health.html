@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Awareness</title>
+    <style>
+        :root {
+            --gold: #FFD700;
+            --teal: #008080;
+            --deep-purple: #5D3A8C;
+            --bg-gradient: linear-gradient(135deg, #FFD700 0%, #F5DEB3 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--deep-purple);
+            scroll-behavior: smooth;
+        }
+
+        /* Box Sections */
+        .section-box {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 50px 30px;
+            background: white; /* distinct box */
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .section-box h1, .section-box h2 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px var(--deep-purple);
+        }
+
+        .section-box h1 {
+            font-size: 4rem;
+            color: var(--gold);
+        }
+
+        .section-box h2 {
+            font-size: 3rem;
+            color: var(--gold);
+        }
+
+        .section-box p {
+            font-size: 1.3rem;
+            color: var(--teal);
+            line-height: 1.6;
+        }
+
+        .section-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Landing Section Box -->
+    <div class="section-box" id="landing">
+        <h1>Mental Health Awareness</h1>
+        <p>Understanding Neurodivergence & Mental Health Support</p>
+    </div>
+
+    <!-- Health Section Box -->
+    <div class="section-box" id="health">
+        <h2>Health</h2>
+        <p>
+            Health is a state of complete physical, mental, and social well-being, not merely the absence of disease or infirmity. 
+            It encompasses the overall quality of life and the ability to adapt and manage physical, mental, and social challenges.
+        </p>
+    </div>
+
+</body>
+</html>
