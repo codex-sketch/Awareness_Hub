@@ -89,6 +89,84 @@
         font-size: 1.3rem;
       }
     }
+
+    /* === 🌍 RESPONSIVE DESIGN SECTION === */
+
+/* ✅ Tablet view (screens smaller than 900px) */
+@media (max-width: 900px) {
+  header {
+    font-size: 1.7rem;       /* make header smaller */
+    padding: 1.5rem;         /* reduce header padding */
+  }
+
+  main {
+    padding: 1.5rem;         /* shrink side padding */
+    margin: 20px;            /* add small margins for breathing space */
+  }
+
+  h2 {
+    font-size: 1.4rem;       /* smaller section titles */
+  }
+
+  p {
+    font-size: 1rem;         /* easier reading */
+  }
+
+  th, td {
+    padding: 10px;           /* compact table cells */
+  }
+}
+
+/* ✅ Mobile view (screens smaller than 600px) */
+@media (max-width: 600px) {
+  header {
+    font-size: 1.4rem;       /* smaller header text */
+    padding: 1.2rem;         /* compact header */
+  }
+
+  main {
+    padding: 1rem;           /* reduce side padding */
+    box-shadow: none;        /* remove heavy shadows */
+    margin: 0;               /* remove margin for full width */
+    border-radius: 0;        /* edge-to-edge layout */
+  }
+
+  h2 {
+    font-size: 1.2rem;       /* smaller section titles */
+    border-left: 4px solid #0066cc;  /* keep accent line thinner */
+    padding-left: 8px;
+  }
+
+  p {
+    font-size: 0.95rem;      /* smaller paragraph text */
+  }
+
+  table {
+    display: block;          /* allow horizontal scrolling */
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+
+  form {
+    padding: 1rem;           /* less space on smaller screens */
+  }
+
+  button {
+    width: 100%;             /* make button full width */
+    padding: 12px;
+  }
+
+  a.button-link {
+    display: block;          /* stack navigation buttons */
+    width: 100%;
+    text-align: center;
+  }
+
+  ul {
+    padding-left: 1rem;      /* compact bullet lists */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -558,6 +636,7 @@ a:hover {
 
 </body>
 </html>
+
 
 
 
