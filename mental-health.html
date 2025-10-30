@@ -25,56 +25,97 @@
             scroll-behavior: smooth;
         }
 
-        /* Box Sections */
+        /* Section Boxes */
         .section-box {
             max-width: 800px;
             margin: 50px auto;
             padding: 50px 30px;
-            background: white; /* distinct box */
+            background: white;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             text-align: center;
-            position: relative;
-            z-index: 1;
             transition: all 0.3s ease;
         }
 
         .section-box h1, .section-box h2 {
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px var(--deep-purple);
+            word-wrap: break-word;
         }
 
         .section-box h1 {
-            font-size: 4rem;
+            font-size: 3.2rem;
             color: var(--gold);
         }
 
         .section-box h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--gold);
         }
 
         .section-box p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--teal);
             line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .section-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .section-box {
+                margin: 30px 15px;
+                padding: 40px 20px;
+            }
+
+            .section-box h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-box p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-box {
+                margin: 25px 10px;
+                padding: 30px 15px;
+            }
+
+            .section-box h1 {
+                font-size: 1.9rem;
+            }
+
+            .section-box h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-box p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Landing Section Box -->
+    <!-- Landing Box -->
     <div class="section-box" id="landing">
         <h1>Mental Health Awareness</h1>
         <p>Understanding Neurodivergence & Mental Health Support</p>
     </div>
 
-    <!-- Health Section Box -->
+    <!-- Health Box -->
     <div class="section-box" id="health">
         <h2>Health</h2>
         <p>
@@ -85,3 +126,5 @@
 
 </body>
 </html>
+
+
