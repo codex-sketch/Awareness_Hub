@@ -25,40 +25,39 @@
             scroll-behavior: smooth;
         }
 
-        /* Section Boxes */
+        /* Box Sections */
         .section-box {
             max-width: 800px;
             margin: 50px auto;
             padding: 50px 30px;
-            background: white;
+            background: white; /* distinct box */
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             text-align: center;
+            position: relative;
+            z-index: 1;
             transition: all 0.3s ease;
         }
 
         .section-box h1, .section-box h2 {
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px var(--deep-purple);
-            word-wrap: break-word;
         }
 
         .section-box h1 {
-            font-size: 3.2rem;
+            font-size: 4rem;
             color: var(--gold);
         }
 
         .section-box h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--gold);
         }
 
         .section-box p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--teal);
             line-height: 1.6;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
         .section-box:hover {
@@ -74,15 +73,15 @@
             }
 
             .section-box h1 {
-                font-size: 2.2rem;
+                font-size: 3rem;
             }
 
             .section-box h2 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .section-box p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
         }
 
@@ -93,15 +92,15 @@
             }
 
             .section-box h1 {
-                font-size: 1.9rem;
+                font-size: 2.5rem;
             }
 
             .section-box h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .section-box p {
-                font-size: 0.95rem;
+                font-size: 1rem;
                 line-height: 1.5;
             }
         }
@@ -109,13 +108,13 @@
 </head>
 <body>
 
-    <!-- Landing Box -->
+    <!-- Landing Section Box -->
     <div class="section-box" id="landing">
         <h1>Mental Health Awareness</h1>
         <p>Understanding Neurodivergence & Mental Health Support</p>
     </div>
 
-    <!-- Health Box -->
+    <!-- Health Section Box -->
     <div class="section-box" id="health">
         <h2>Health</h2>
         <p>
@@ -124,7 +123,506 @@
         </p>
     </div>
 
+    <!-- Mental Health Section Box -->
+    <div class="section-box" id="mental-health">
+        <h2>Mental Health</h2>
+        <p>
+            Mental health refers to a person's emotional, psychological, and social well-being. 
+            It affects how we think, feel, and act in daily life. It also determines how we handle stress, relate to others, and make decisions. 
+            Maintaining good mental health is essential for overall health and quality of life.
+        </p>
+    </div>
+
+    <!-- Neurodivergence Section Box -->
+<div class="section-box" id="neurodivergence">
+    <h2>Neurodivergence</h2>
+    <p>
+        <span style="color: var(--gold); font-weight: bold;">Neurodivergence</span> describes the natural variations in the way people's brains function, process information, and perceive the world. 
+        It includes conditions such as <span style="color: var(--teal); font-weight: bold;">Autism</span>, 
+        <span style="color: var(--teal); font-weight: bold;">ADHD</span>, and <span style="color: var(--teal); font-weight: bold;">dyslexia</span>. 
+        These differences can influence how individuals think, learn, or respond to certain situations, 
+        but they are not flaws or choices — they are part of a person’s unique neurological makeup. 
+        Recognizing neurodivergence helps foster <span style="color: var(--gold); font-weight: bold;">understanding</span>, 
+        <span style="color: var(--gold); font-weight: bold;">inclusion</span>, and supportive environments for all.
+    </p>
+</div>
+
+<!-- brain -->
+ <div class="section-box" id="brain">
+    <h2>The Brain & Neurodivergence</h2>
+    <p>
+        The human brain is made up of different regions, each responsible for specific functions. 
+        <span class="tooltip">prefrontal cortex
+            <span class="tooltiptext">The front part of the brain involved in decision-making, planning, and self-control.</span>
+        </span> helps with decision-making, planning, and self-control, 
+        while the <span class="tooltip">amygdala
+            <span class="tooltiptext">A small region in the brain that processes emotions such as fear and anxiety.</span>
+        </span> is involved in processing emotions like fear and anxiety. 
+        Neurotransmitters, which are chemical messengers in the brain, play a major role in regulating mood and behavior. 
+        For example, <span class="tooltip">dopamine
+            <span class="tooltiptext">A neurotransmitter that affects motivation, reward, and attention.</span>
+        </span> affects motivation and attention, 
+        <span class="tooltip">serotonin
+            <span class="tooltiptext">A neurotransmitter that influences mood, social behavior, and well-being.</span>
+        </span> influences mood and social behavior, and 
+        <span class="tooltip">norepinephrine
+            <span class="tooltiptext">A neurotransmitter that helps regulate alertness, arousal, and the stress response.</span>
+        </span> helps with alertness and stress response. 
+        In neurodivergent individuals, the brain may process information, regulate these chemicals, or activate certain regions differently. 
+        This can influence emotions, learning styles, focus, and social interactions, highlighting the unique ways neurodivergent brains experience the world.
+    </p>
+</div> 
+
+<style>
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--teal);
+    font-weight: bold;
+    text-decoration: underline dotted;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: var(--deep-purple);
+    color: #fff;
+    text-align: left;
+    border-radius: 8px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%; /* above the word */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.95rem;
+    line-height: 1.4;
+} -->
+
+<!-- /* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* arrow below tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--deep-purple) transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+</style> 
+
+<!-- Types of Neurodivergence Section Box -->
+<div class="section-box" id="types">
+    <h2>Types of Neurodivergence</h2>
+    <p>Here are the five globally recognized types of neurodivergence. Hover or tap the terms to see a brief explanation.</p>
+    
+    <div class="disorder-cards">
+        <div class="disorder-card tooltip">Autism
+            <span class="tooltiptext">Affects social interaction, communication, and behavior patterns.</span>
+        </div>
+        <div class="disorder-card tooltip">ADHD
+            <span class="tooltiptext">Impacts attention, hyperactivity, and impulse control.</span>
+        </div>
+        <div class="disorder-card tooltip">Dyslexia
+            <span class="tooltiptext">Affects reading, writing, and spelling.</span>
+        </div>
+        <div class="disorder-card tooltip">Dyspraxia
+            <span class="tooltiptext">Impacts coordination and motor skills.</span>
+        </div>
+        <div class="disorder-card tooltip">Dyscalculia
+            <span class="tooltiptext">Makes understanding numbers and calculations difficult.</span>
+        </div>
+    </div>
+
+    <p style="margin-top:20px;">There are also other types of neurodivergence that are less recognized but equally important to understand.</p>
+</div>
+
+<style>
+/* Container for mini-boxes inside the main section */
+.disorder-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Each mini-box/card */
+.disorder-card {
+    background: var(--teal);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 15px;
+    min-width: 140px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for cards */
+.disorder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Tooltip for each mini-box */
+.disorder-card .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: var(--deep-purple);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+/* Tooltip arrow */
+.disorder-card .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--deep-purple) transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.disorder-card:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+    .disorder-cards {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .disorder-card {
+        min-width: 200px;
+    }
+}
+</style>
+
+ <!-- Autism Section Box -->
+<div class="section-box" id="autism">
+    <h2>Autism</h2>
+
+    <!-- Definition Mini-Box -->
+    <div class="mini-box">
+        <h3>What is Autism?</h3>
+        <p>
+            Autism, or Autism Spectrum Disorder (ASD), is a neurodevelopmental condition that affects how a person perceives the world, communicates, and interacts with others. 
+            Individuals with autism may experience differences in social interaction, communication, sensory processing, and behavior patterns. 
+            Autism is a spectrum, which means its characteristics range from mild to more pronounced, and every autistic person has a unique combination of strengths and challenges.
+        </p>
+    </div>
+
+    <!-- Types Mini-Box -->
+    <div class="mini-box">
+        <h3>Types of Autism</h3>
+        <ul>
+            <li><strong>Autistic Disorder (Classic Autism)</strong> – noticeable challenges in communication, social interaction, and repetitive behaviors; often more severe.</li>
+            <li><strong>Asperger’s Syndrome</strong> – difficulties with social interaction and restricted interests, usually with normal or above-average intelligence; milder symptoms.</li>
+            <li><strong>PDD-NOS (Atypical Autism)</strong> – some but not all traits of classic autism; severity varies.</li>
+            <li><strong>Childhood Disintegrative Disorder (CDD)</strong> – rare; typical development followed by significant loss of skills; more severe.</li>
+            <li><strong>High-Functioning Autism (HFA)</strong> – milder symptoms with average or above-average intelligence.</li>
+        </ul>
+    </div>
+
+    <!-- Spectrum Levels Mini-Box -->
+    <div class="mini-box">
+        <h3>Autism Spectrum Levels</h3>
+        <ul>
+            <li><strong>Level 1 – Requiring Support</strong>: Mild challenges; can function with some assistance.</li>
+            <li><strong>Level 2 – Requiring Substantial Support</strong>: Noticeable difficulties; needs more consistent support.</li>
+            <li><strong>Level 3 – Requiring Very Substantial Support</strong>: Significant challenges; needs intensive support; more severe but less common.</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+/* Mini-box styling inside main section */
+.mini-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.mini-box h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+.mini-box p, .mini-box ul {
+    color: var(--deep-purple);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.mini-box ul li {
+    margin-bottom: 8px;
+}
+</style>
+
+
+<!-- 24 Hours in Thomas's Life -->
+<div class="section-box" id="thomas-life">
+    <h2>24 Hours in Thomas's Life</h2>
+    <p>Thomas is 11 years old, tall for his age, and autistic. Let’s walk through a day in his life and see how he experiences the world.</p>
+
+    <!-- Morning -->
+    <div class="mini-box">
+        <h3>7:00 AM – Waking Up</h3>
+        <p>
+            Thomas wakes up to the sound of his alarm. Loud noises sometimes startle him, so he puts on his headphones. 
+            <span class="tooltip" title="Thomas is sensitive to sound, a common trait for autistic children.">This helps him feel calm.</span>
+        </p>
+    </div>
+
+    <div class="mini-box">
+        <h3>7:30 AM – Breakfast</h3>
+        <p>
+            At breakfast, Thomas likes his food in a specific order on the plate. If the cereal touches the toast, he gets anxious. 
+            <span class="tooltip" title="Many autistic children have sensory preferences or routines.">These small routines help him feel safe.</span>
+        </p>
+    </div>
+
+    <!-- School -->
+    <div class="mini-box">
+        <h3>8:30 AM – School Begins</h3>
+        <p>
+            Thomas walks into class. He’s taller than most kids, so he often stands out. When someone takes his pencil, he goes quiet. 
+            <span class="tooltip" title="He may feel overwhelmed and needs a moment to process.">This quiet moment is his brain managing emotions.</span>
+            He doesn’t shout or get angry, but internally he’s working through frustration.
+        </p>
+    </div>
+
+    <div class="mini-box">
+        <h3>10:00 AM – Recess</h3>
+        <p>
+            During recess, Thomas prefers lining up the small toys instead of running around. 
+            <span class="tooltip" title="He may enjoy structured play and find large social groups overwhelming.">This is how he feels safe and engaged.</span>
+        </p>
+    </div>
+
+    <div class="mini-box">
+        <h3>12:00 PM – Lunch</h3>
+        <p>
+            Thomas sits quietly eating his sandwich. He notices the way others interact but may not join immediately. 
+            <span class="tooltip" title="Social interactions can be challenging for autistic kids.">He observes first, then decides if he wants to join in.</span>
+        </p>
+    </div>
+
+    <!-- Afternoon -->
+    <div class="mini-box">
+        <h3>2:00 PM – Math Class</h3>
+        <p>
+            Thomas loves patterns and numbers. When the teacher gives a tricky problem, his eyes light up. 
+            <span class="tooltip" title="Many autistic children have special interests and excel in certain subjects.">Math is one of his strengths.</span>
+        </p>
+    </div>
+
+    <div class="mini-box">
+        <h3>3:30 PM – End of School</h3>
+        <p>
+            On the way home, Thomas prefers walking alone for a few minutes, listening to music. 
+            <span class="tooltip" title="He may need quiet time to recharge after a busy day.">This helps him process everything that happened.</span>
+        </p>
+    </div>
+
+    <!-- Evening -->
+    <div class="mini-box">
+        <h3>5:00 PM – Homework</h3>
+        <p>
+            Thomas sits at his desk with everything organized just right. If someone moves his notebook, he pauses for a second, takes a deep breath, and continues. 
+            <span class="tooltip" title="Routine helps him feel in control and focused.">This is part of his coping strategy.</span>
+        </p>
+    </div>
+
+    <div class="mini-box">
+        <h3>7:00 PM – Dinner</h3>
+        <p>
+            Dinner with family is loud, but Thomas uses a quiet corner to eat comfortably. He might hum or rock slightly while eating — a self-soothing behavior. 
+            <span class="tooltip" title="Repeating movements or sounds can help autistic children regulate emotions.">It helps him feel safe and calm.</span>
+        </p>
+    </div>
+
+    <!-- Night -->
+    <div class="mini-box">
+        <h3>8:30 PM – Relaxation</h3>
+        <p>
+            Thomas reads a book about space. He loves facts and visual stories. Sometimes he reads the same page twice — not because he forgot, but because it feels comforting. 
+            <span class="tooltip" title="Repetition can be calming and enjoyable for autistic children.">This is part of his sensory enjoyment.</span>
+        </p>
+    </div>
+
+    <div class="mini-box">
+        <h3>9:30 PM – Bedtime</h3>
+        <p>
+            Thomas prepares for bed in his exact routine: pajamas, brushing teeth, arranging stuffed animals. Any change can make him anxious, so he follows his steps carefully. 
+            <span class="tooltip" title="Routines provide predictability and comfort.">This helps him sleep peacefully.</span>
+        </p>
+    </div>
+</div>
+
+<!-- ADHD Section Box -->
+<div class="section-box" id="adhd">
+    <h2>ADHD</h2>
+
+    <!-- Definition Mini-Box -->
+    <div class="mini-box">
+        <h3>What is ADHD?</h3>
+        <p>
+            ADHD stands for <strong>Attention Deficit Hyperactivity Disorder</strong>. It is a neurodevelopmental condition that affects a person’s ability to focus, control impulses, and manage energy levels. 
+            Individuals with ADHD may find it challenging to pay attention for long periods, stay organized, or remain still when required. 
+            ADHD is often noticed in childhood but can continue into adolescence and adulthood. 
+            People with ADHD can also have unique strengths, such as creativity, hyperfocus on special interests, and high energy for tasks they enjoy.
+        </p>
+    </div>
+    <!-- ADHD Types Mini-Box -->
+<div class="mini-box">
+    <h3>Types of ADHD</h3>
+    <ul>
+        <li><strong>Predominantly Inattentive</strong> – Difficulties with focus, organization, and following instructions. Often appears distracted or “daydreamy.”</li>
+        <li><strong>Predominantly Hyperactive-Impulsive</strong> – Struggles with sitting still, controlling impulses, or staying calm. Often appears energetic or fidgety.</li>
+        <li><strong>Combined Type</strong> – Shows both inattentive and hyperactive-impulsive symptoms. Needs support for attention and activity regulation.</li>
+    </ul>
+</div>
+
+
+</div>
+<!-- 24 Hours in Camille's Life -->
+<div class="section-box" id="camille-life">
+    <h2>24 Hours in Camille's Life</h2>
+    <p>Camille is 7 years old and has ADHD. Let’s explore her day and see how she experiences the world.</p>
+
+<!-- Morning -->
+<div class="mini-box">
+    <h3>7:00 AM – Waking Up</h3>
+    <p>
+        Camille wakes up and immediately starts jumping on her bed. 
+        <span class="tooltip" title="High energy and restlessness are common in ADHD.">This is her natural hyperactivity in action.</span>
+        She sometimes forgets to brush her teeth because she’s already thinking about breakfast or school.
+    </p>
+</div>
+
+<div class="mini-box">
+    <h3>7:30 AM – Breakfast</h3>
+    <p>
+        While eating, Camille often gets distracted by the clock or passing cars outside. She grabs a pencil and writes down plate numbers she sees. 
+        <span class="tooltip" title="Writing down patterns or random details can help her focus or release excess energy.">This is a way Camille channels her attention.</span>
+    </p>
+</div>
+
+<!-- School -->
+<div class="mini-box">
+    <h3>8:30 AM – School Begins</h3>
+    <p>
+        Camille struggles to stay seated during lessons. She taps her pencil, shifts in her seat, or sometimes blurts out answers without raising her hand. 
+        <span class="tooltip" title="Impulsivity is a common ADHD trait; she thinks and acts quickly.">This helps her brain process ideas in real time.</span>
+    </p>
+</div>
+
+<div class="mini-box">
+    <h3>10:00 AM – Recess</h3>
+    <p>
+        Camille runs around energetically, climbs on the jungle gym, and plays tag with friends. She finds it hard to stop when the bell rings. 
+        <span class="tooltip" title="Hyperactivity makes it hard to transition between activities.">She’s releasing excess energy.</span>
+    </p>
+</div>
+
+<div class="mini-box">
+    <h3>12:00 PM – Lunch</h3>
+    <p>
+        Camille eats quickly and then starts doodling on her napkin. Sometimes she talks loudly to a friend across the table. 
+        <span class="tooltip" title="ADHD can cause impulsivity and difficulty regulating attention.">Her mind jumps between eating, drawing, and socializing.</span>
+    </p>
+</div>
+
+<!-- Afternoon -->
+<div class="mini-box">
+    <h3>1:30 PM – Math Class</h3>
+    <p>
+        Camille loves hands-on activities but struggles with long instructions. If the teacher gives too many steps at once, she loses track. 
+        <span class="tooltip" title="ADHD can make multi-step tasks challenging.">Breaking tasks into small steps helps her succeed.</span>
+    </p>
+</div>
+
+<div class="mini-box">
+    <h3>3:00 PM – End of School</h3>
+    <p>
+        Camille bounces around on the way home, pointing out interesting things she saw during the day, like patterns on cars or birds. 
+        <span class="tooltip" title="Hyperfocus on interests is common in ADHD.">Her curiosity drives her energy.</span>
+    </p>
+</div>
+
+<!-- Evening -->
+<div class="mini-box">
+    <h3>4:30 PM – Homework</h3>
+    <p>
+        Camille sits at her desk, but she often gets distracted by sounds or fidgets with a toy while trying to focus. 
+        <span class="tooltip" title="Children with ADHD often need short breaks or fidgeting tools.">Small movements help her concentrate.</span>
+    </p>
+</div>
+
+<div class="mini-box">
+    <h3>6:00 PM – Dinner</h3>
+    <p>
+        Camille chats loudly with family, sometimes switching topics rapidly. She may interrupt, but she is enthusiastic and curious about everyone’s stories. 
+        <span class="tooltip" title="ADHD can affect social communication and impulse control.">This is her excitement showing through.</span>
+    </p>
+</div>
+
+<!-- Night -->
+<div class="mini-box">
+    <h3>7:30 PM – Relaxation</h3>
+    <p>
+        Camille draws or builds with blocks. Sometimes she hyperfocuses for a long time, forgetting the clock. 
+        <span class="tooltip" title="Hyperfocus is when attention locks on a preferred activity.">It’s a positive aspect of ADHD attention.</span>
+    </p>
+</div>
+
+<div class="mini-box">
+    <h3>9:00 PM – Bedtime</h3>
+    <p>
+        Camille struggles to settle down. She might run to the bathroom multiple times, or ask a lot of questions before sleep. 
+        <span class="tooltip" title="Difficulty winding down is common in ADHD.">A calming routine helps her transition to rest.</span>
+    </p>
+</div>
+
+</div>
+
+
 </body>
 </html>
+
+
 
 
