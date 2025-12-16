@@ -1,0 +1,311 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VX – Visual Execution</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* ================= INTRO ================= */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      transition: opacity 1.6s ease-in-out;
+    }
+
+    #intro.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .intro-vx {
+      font-size: 6rem;
+      font-weight: 800;
+      color: gold;
+      opacity: 0;
+      animation: vxFade 2.56s forwards;
+      z-index: 2;
+    }
+
+    @keyframes vxFade {
+      to { opacity: 1; }
+    }
+
+    .intro-text {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: white;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: textSlide 1.5s forwards;
+      animation-delay: 2.56s;
+      z-index: 2;
+    }
+
+    @keyframes textSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Moving circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: gold;
+      opacity: 0.08;
+      animation: float 14s ease-in-out infinite;
+    }
+
+    .c1 { width: 120px; height: 120px; top: 15%; left: 20%; }
+    .c2 { width: 80px; height: 80px; bottom: 20%; right: 25%; animation-duration: 18s; }
+    .c3 { width: 60px; height: 60px; top: 55%; left: 60%; animation-duration: 20s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -40px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* ================= HOME ================= */
+    #home {
+      background: white;
+      min-height: 100vh;
+      opacity: 0;
+      transition: opacity 1.6s ease-in-out;
+    }
+
+    #home.show {
+      opacity: 1;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav .brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: black;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: gold;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 60px;
+      text-align: center;
+    }
+
+    .hero .queen {
+      font-size: 5rem;
+      color: gold;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    /* IDEAS / SERVICES */
+    .section {
+      padding: 80px 60px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 50px;
+    }
+
+    .ideas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      padding: 30px;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: gold;
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTRO -->
+  <div id="intro">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+    <div class="intro-vx">VX</div>
+    <div class="intro-text">Bringing your ideas to life</div>
+  </div>
+
+  <!-- HOME -->
+  <div id="home">
+
+    <nav>
+      <div class="brand">VX</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div class="queen">♛</div>
+      <h1>Visual Execution</h1>
+      <p>
+        VX is a creative tech brand focused on turning ideas into powerful digital
+        experiences through design, strategy, and innovation.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What We Do</h2>
+      <div class="ideas">
+        <div class="card">
+          <h3>Graphic Design</h3>
+          <p>Logos, brand identity, flyers, and visual systems that stand out.</p>
+        </div>
+        <div class="card">
+          <h3>Web Design</h3>
+          <p>Modern, responsive websites built to look premium and convert.</p>
+        </div>
+        <div class="card">
+          <h3>Creative Direction</h3>
+          <p>We help shape your ideas into a clear, powerful visual story.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <h2>About VX</h2>
+      <p>
+        VX (Visual Execution) is built on precision, strategy, and creativity.
+        Inspired by the queen chess piece, we move with intent, control,
+        and vision — executing ideas at the highest level.
+      </p>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <p>Let’s build something powerful.</p>
+      <p>Email: jamesbowman840@gmail.com</p>
+      <p>Phone: +234 708 237 5689</p>
+    </section>
+
+    <footer>
+      © 2025 VX – Visual Execution
+    </footer>
+
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("intro").classList.add("fade-out");
+      document.getElementById("home").classList.add("show");
+    }, 4300);
+  </script>
+
+</body>
+</html>
